@@ -1,0 +1,35 @@
+#network:
+seed:
+cuda:
+  enable: True
+  gpus: '0'
+  cudnn: True
+in_channels: 1
+model_type: resnet101
+
+#
+train_path: 'data/train'
+test_path: 'data/test'
+direction_start_b: True
+checkpoint_path: 'checkpoint'
+result_path: 'result'
+pretrained:
+  enable: True
+  path: 'pretrained/resnet101.pth'
+#  path: 'checkpoint/3530.pth'
+
+#data loader
+batch_size: 4
+workers: 10
+
+#train
+epoch_count: 1
+niter: 1000
+niter_decay: 1000
+learn_rate: 0.0002
+
+latest_epoch: latest
+
+#test
+num_test: 200
+aspect_ratio: 1.0
